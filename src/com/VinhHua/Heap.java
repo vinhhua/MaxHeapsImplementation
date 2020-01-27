@@ -104,6 +104,7 @@ public class Heap {
         }
     }
 
+
     /**
      * Checks if the heap is empty.
      *
@@ -111,6 +112,19 @@ public class Heap {
      */
     public boolean isEmpty() {
         return size == 0;
+    }
+
+
+    /**
+     * Take a look at the root.
+     *
+     * @return the root.
+     */
+    public int peek() {
+        if (isEmpty()) {
+            throw new IndexOutOfBoundsException("Heap is empty");
+        }
+        return heap[0];
     }
 
 
