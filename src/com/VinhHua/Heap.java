@@ -49,6 +49,23 @@ public class Heap {
 
 
     /**
+     * Sorts the heap.
+     */
+    public void sort() {
+        int lastIndex = size - 1;
+        for (int i = 0; i < lastIndex; i++) {
+            // swap the first element in the heap(largest value) with the last element in the heap.
+            int temp = heap[0];
+            heap[0] = heap[lastIndex - i];
+            heap[lastIndex - i] = temp;
+
+            // heapify the heap after the swap.
+            fixHeapBelow(0, lastIndex - i - 1);
+        }
+    }
+
+
+    /**
      * Heapify.
      * @param index as an int.
      */
